@@ -44,15 +44,17 @@ public class PlayerControl : MonoBehaviour
 
         if (Input.GetButtonDown("Fire1"))
         {
-            Bullet _newBullet = Instantiate(_bullet,_bulletLocation.position,Quaternion.identity);
+            Bullet _newBullet = Instantiate(_bullet,_bulletLocation.position,_bulletLocation.rotation);
             _newBullet.FireBullet(_bulletLocation.up, bulletSpeed);
         }
 
     }
 
-    public void OnDeath()
+    private void OnTriggerEnter2D(Collider2D collision)
     {
-        //Destroy player
-        //Prompt retry screen or to go back to the main menu
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            //Kill player
+        }
     }
 }

@@ -5,7 +5,6 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
 
-    [SerializeField] private string target;
     private Rigidbody2D _rigidbody;
 
     public void FireBullet(Vector3 fireLocation, float speed)
@@ -16,13 +15,7 @@ public class Bullet : MonoBehaviour
         Destroy(gameObject, 4f);
     }
 
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.tag == target)
-        {
-            //Destroy target
-            Destroy(gameObject);
-        }
-    }
+    public Rigidbody2D getRigidbody()
+        { return _rigidbody; }
 
 }

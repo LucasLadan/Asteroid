@@ -48,7 +48,7 @@ ParticleSystem:
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
   emitterVelocityMode: 1
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -106,7 +106,7 @@ ParticleSystem:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-  moveWithTransform: 0
+  moveWithTransform: 1
   moveWithCustomTransform: {fileID: 0}
   scalingMode: 1
   randomSeed: 0
@@ -169,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 18.74
+      scalar: 20
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -287,7 +287,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.6
+      scalar: 0.4
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -603,7 +603,7 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     randomizeRotationDirection: 0
-    gravitySource: 0
+    gravitySource: 1
     maxNumParticles: 1000
     customEmitterVelocity: {x: 0, y: 0, z: 0}
     size3D: 0
@@ -4809,7 +4809,7 @@ ParticleSystemRenderer:
   m_SortingFudge: 0
   m_NormalDirection: 1
   m_ShadowBias: 0
-  m_RenderAlignment: 1
+  m_RenderAlignment: 0
   m_Pivot: {x: 0, y: 0, z: 0}
   m_Flip: {x: 0, y: 0, z: 0}
   m_EnableGPUInstancing: 1
@@ -4840,7 +4840,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9138135534543718468}
   - component: {fileID: 4188933591126923758}
-  - component: {fileID: 5267553585685456156}
+  - component: {fileID: 6573215712041480978}
   - component: {fileID: 8949266415773488418}
   - component: {fileID: 5323379714930002048}
   m_Layer: 0
@@ -4907,7 +4907,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 5
   m_Sprite: {fileID: 21300000, guid: 37fa1e104cfb3264396e2d961b009542, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -4919,8 +4919,8 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!58 &5267553585685456156
-CircleCollider2D:
+--- !u!70 &6573215712041480978
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -4951,9 +4951,9 @@ CircleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.91
+  m_Offset: {x: 0, y: 0.07}
+  m_Size: {x: 1.36, y: 1.9}
+  m_Direction: 0
 --- !u!50 &8949266415773488418
 Rigidbody2D:
   serializedVersion: 4
@@ -4993,13 +4993,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb747a1a5a0159b47893eef75b885ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 40
-  moveSpeed: 2.5
+  turnSpeed: 75
+  moveSpeed: 3
   fireRate: 1
-  bulletSpeed: 5
-  _bullet: {fileID: 7833125272958795191, guid: 0eccd6769a735ab44b3929c4de5c4592, type: 3}
+  bulletSpeed: 10
+  _bullet: {fileID: -2856981736417283106, guid: 0eccd6769a735ab44b3929c4de5c4592, type: 3}
   _bulletLocation: {fileID: 522950565015783619}
   _particle: {fileID: 1255780997050433910}
+  particleCount: 1
 --- !u!1 &7737254078591006908
 GameObject:
   m_ObjectHideFlags: 0
