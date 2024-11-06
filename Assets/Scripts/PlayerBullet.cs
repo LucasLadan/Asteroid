@@ -11,6 +11,7 @@ public class PlayerBullet : Bullet
         if (enemy)
         {
             enemy.TakeDamage();
+            Destroy(gameObject);
         }    
     }
 }

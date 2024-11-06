@@ -7,6 +7,7 @@ public class Enemy : MonoBehaviour
 {
     private Rigidbody2D _rigidbody;
     private EnemySpawnScript _spawnScript;
+    private bool isActive = false;
 
     [SerializeField] private float speed;
     void Start()
@@ -20,8 +21,19 @@ public class Enemy : MonoBehaviour
 
     public virtual void TakeDamage()
     {
-        TriggerSpawnScript();
-        Destroy(gameObject);
+        if (getIsActive())
+        {
+            TriggerSpawnScript();
+            Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.name == "background")
+        {
+            isActive = true;
+        }
     }
 
     public void TriggerSpawnScript()
@@ -35,5 +47,8 @@ public class Enemy : MonoBehaviour
 
     public float getSpeed()
     { return speed; }
+
+    public bool getIsActive()
+        { return isActive; }
 
 }

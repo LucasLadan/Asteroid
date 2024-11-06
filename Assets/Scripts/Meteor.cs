@@ -10,11 +10,16 @@ public class Meteor : Enemy
 
     public override void TakeDamage()
     {
-        TriggerSpawnScript();
-        if (nextTier != null)
+
+        if (getIsActive())
         {
-            Meteor meteor1 = Instantiate(nextTier,spawn1.position,spawn1.rotation);
-            Meteor meteor2 = Instantiate(nextTier, spawn2.position, spawn2.rotation);
-        }
+            TriggerSpawnScript();
+            if (nextTier != null)
+            {
+                Meteor meteor1 = Instantiate(nextTier, spawn1.position, spawn1.rotation);
+                Meteor meteor2 = Instantiate(nextTier, spawn2.position, spawn2.rotation);
+            }
+            Destroy(gameObject);
+        } 
     }
 }
