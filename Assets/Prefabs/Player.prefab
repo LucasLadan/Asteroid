@@ -4797,7 +4797,7 @@ ParticleSystemRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_RenderMode: 0
   m_MeshDistribution: 0
   m_SortMode: 0
@@ -4840,9 +4840,9 @@ GameObject:
   m_Component:
   - component: {fileID: 9138135534543718468}
   - component: {fileID: 4188933591126923758}
-  - component: {fileID: 6573215712041480978}
   - component: {fileID: 8949266415773488418}
   - component: {fileID: 5323379714930002048}
+  - component: {fileID: 1364200091624192858}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -4919,41 +4919,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!70 &6573215712041480978
-CapsuleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2205974701963431532}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_ForceSendLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ForceReceiveLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_ContactCaptureLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_CallbackLayers:
-    serializedVersion: 2
-    m_Bits: 4294967295
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.07}
-  m_Size: {x: 1.36, y: 1.9}
-  m_Direction: 0
 --- !u!50 &8949266415773488418
 Rigidbody2D:
   serializedVersion: 4
@@ -4993,14 +4958,50 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cb747a1a5a0159b47893eef75b885ac3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  turnSpeed: 75
-  moveSpeed: 3
-  fireRate: 1
+  invincibilityTime: 0
+  turnSpeed: 120
+  moveSpeed: 5
+  fireRate: 0.1
   bulletSpeed: 10
   _bullet: {fileID: -2856981736417283106, guid: 0eccd6769a735ab44b3929c4de5c4592, type: 3}
   _bulletLocation: {fileID: 522950565015783619}
   _particle: {fileID: 1255780997050433910}
   particleCount: 1
+--- !u!58 &1364200091624192858
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2205974701963431532}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0.12}
+  serializedVersion: 2
+  m_Radius: 0.87
 --- !u!1 &7737254078591006908
 GameObject:
   m_ObjectHideFlags: 0
